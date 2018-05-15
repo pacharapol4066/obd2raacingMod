@@ -27,7 +27,7 @@ void obd2racingmod_h::init(void)
       lcd.begin(16,4);
       lcd.backlight();
       showMsgLCD("Hilux Vigo Dashboard","by VT11257");
-      delay(1000);
+      delay(2000);
       showMsgLCD("Hilux Vigo Dashboard","booting...");
       delay(2000);
       showMsgLCD("CAN BUS Shield init ok!","");
