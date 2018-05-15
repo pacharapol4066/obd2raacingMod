@@ -93,7 +93,7 @@ void obd2racingmod_h::sendOrder()
    * len：size of the array                    > 8 bytes of data
    * buf：data array                           > orBuf[8]
    */
-  CAN.sendMsgBuf(0x7df, 0, 8, orBuf);
+  CAN.sendMsgBuf(CAN_ID, 0, 8, orBuf);
   
   if(CAN.checkReceive()== CAN_MSGAVAIL)      // Check to see whether data is received.
   {
@@ -119,7 +119,7 @@ INT32U char_merger(INT8U iHigh, INT8U iLow)
 
 INT32U obd2racingmod_h::getRevData()
 {
-  setModePid(0x01, 0x0c);                             //Engine REV
+  setModePid(MODE1, PID_ENGREV);                             //Engine REV
   sendOrder();                                        //Send command to ECU and retrieve data by reference
   return (char_merger(m_cData[3], m_cData[4])/4);     //Return to main
 }
@@ -127,7 +127,7 @@ INT32U obd2racingmod_h::getRevData()
 
 INT32U obd2racingmod_h::getTempData()
 {
-  setModePid(0x01, 0x05);       //Coolant temperature
+  setModePid(MODE1, PID_ENGTEMP);       //Coolant temperature
   sendOrder();                  //Send command to ECU and retrieve data by reference
   return (m_cData[3] - 40);     //Return to main
 }
