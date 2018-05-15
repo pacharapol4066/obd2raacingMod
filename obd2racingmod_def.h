@@ -1,3 +1,7 @@
+/*
+ *  MODIFIED BY PACHARAPOL OUMOLARN
+ *  15/5/2018
+ */
 #ifndef _OBD_II_DEF_H_
 #define _OBD_II_DEF_H_
 

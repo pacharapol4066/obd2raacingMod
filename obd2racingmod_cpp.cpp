@@ -1,3 +1,7 @@
+/*
+ *  MODIFIED BY PACHARAPOL OUMOLARN
+ *  15/5/2018
+ */
 #include "obd2racingMod.h"
 #include <mcp_can.h>            //CAN Bus Shield Compatibility Library
 #include <SPI.h>                //CAN Bus Shield SPI Pin Library            
