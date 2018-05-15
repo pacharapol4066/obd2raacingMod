@@ -12,9 +12,9 @@ void setup()
   OBD2MOD.init();
 }
 
-
 //Loop
 void loop()
 {
-
+    OBD2MOD.showValLCD("REV  : ",OBD2MOD.getRevData());
+    OBD2MOD.showValLCD("TEMP : ",OBD2MOD.getTempData());
 }

@@ -13,11 +13,13 @@ class obd2racingmod_h
   private:
   void sendOrder();
   void setModePid(INT8U cMode, INT8U cPid);
-  void showTextLCD(String line1,String line2);
   
   public:
   void init(void);
-  //INT32U getData(INT8U type);
+  void showMsgLCD(String line1,String line2);
+  void showValLCD(String line1,INT32U line2);
+  INT32U getRevData();
+  INT32U getTempData();
 
 };
 
