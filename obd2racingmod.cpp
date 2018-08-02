@@ -112,6 +112,7 @@ void obd2racingmod_h::setModePid(INT8U cMode, INT8U cPid)
   m_cPid  = cPid;
 }
 
+/* Use for unsign long plus(+) method */
 INT32U char_merger(INT8U iHigh, INT8U iLow)
 {
   INT32U t = 0;
@@ -122,17 +123,17 @@ INT32U char_merger(INT8U iHigh, INT8U iLow)
 
 INT32U obd2racingmod_h::getRevData()
 {
-  setModePid(MODE1, PID_ENGREV);                             //Engine REV
+  setModePid(MODE1, PID_ENGREV);                      //Engine REV (SAE J1979)
   sendOrder();                                        //Send command to ECU and retrieve data by reference
-  return (char_merger(m_cData[3], m_cData[4])/4);     //Return to main
+  return (char_merger(m_cData[3], m_cData[4])/4);     //Return to main ( formular A+B/4 )
 }
 
 
 INT32U obd2racingmod_h::getTempData()
 {
-  setModePid(MODE1, PID_ENGTEMP);       //Coolant temperature
-  sendOrder();                  //Send command to ECU and retrieve data by reference
-  return (m_cData[3] - 40);     //Return to main
+  setModePid(MODE1, PID_ENGTEMP);       //Coolant temperature (SAE J1979)
+  sendOrder();                          //Send command to ECU and retrieve data by reference
+  return (m_cData[3] - 40);             //Return to main
 }
 
 obd2racingmod_h OBD2MOD;

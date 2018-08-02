@@ -24,7 +24,6 @@ class obd2racingmod_h
   void showValLCD(String line1,INT32U line2);
   INT32U getRevData();
   INT32U getTempData();
-
 };
 
 extern obd2racingmod_h OBD2MOD;
