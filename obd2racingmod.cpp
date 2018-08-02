@@ -24,8 +24,8 @@ void obd2racingmod_h::init(void)
   {
 #if DEBUGMODE
       //Initialize LCD
-      lcd.begin(16,4);
-      lcd.backlight();
+      //lcd.begin(16,4);
+      //lcd.backlight();
       showMsgLCD("Hilux Vigo Dashboard","by VT11257");
       delay(2000);
       showMsgLCD("Hilux Vigo Dashboard","booting...");
@@ -35,15 +35,14 @@ void obd2racingmod_h::init(void)
 #else
      ;
 #endif
-    }
   else 
-    {
+   {
 #if DEBUGMODE
       Serial.println("CAN INIT FAIL!!");
 #else
-      ;
+     ;
 #endif
-    }
+   }
 
     CAN.init_Filt(0, 0, 0x7e0);
     CAN.init_Mask(0, 0, 0x7f0);
@@ -62,21 +61,20 @@ void obd2racingmod_h::init(void)
 //Reload LC Display
 void obd2racingmod_h::showMsgLCD(String line1,String line2)
 {  
-  lcd.clear();
-  lcd.setCursor(0, 0);
-  lcd.print(line1);
-  lcd.setCursor(0, 1);
-  lcd.print(line2);
+    Serial.println(line1);
+    Serial.println(line2);
 }
 
 //Reload LC Display
 void obd2racingmod_h::showValLCD(String line1,INT32U line2)
 {  
-  lcd.clear();
-  lcd.setCursor(0, 2);
-  lcd.print(line1);
-  lcd.setCursor(0, 3);
-  lcd.print(line2);
+//  lcd.clear();
+//  lcd.setCursor(0, 2);
+//  lcd.print(line1);
+//  lcd.setCursor(0, 3);
+//  lcd.print(line2);
+    Serial.println(line1);
+    Serial.println(line2);
 }
 
 

@@ -15,7 +15,7 @@
 #define INT32U unsigned long
 #endif
 
-
+#define DEBUGMODE 1
 #define PID_ENGREV  0x0c
 #define PID_ENGTEMP 0x05
 #define CAN_ID      0x7df
