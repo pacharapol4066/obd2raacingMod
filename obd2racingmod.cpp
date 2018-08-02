@@ -6,10 +6,10 @@
 #include "obd2racingMod.h"
 #include <mcp_can.h>            //CAN Bus Shield Compatibility Library
 #include <SPI.h>                //CAN Bus Shield SPI Pin Library            
-#include <LiquidCrystal.h>
+//#include <LiquidCrystal.h>
 #include <Arduino.h>            //String support
 
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+//LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 const int SPI_CS_PIN = 9;
 MCP_CAN CAN(SPI_CS_PIN);  // Set CS pin
 
@@ -61,6 +61,11 @@ void obd2racingmod_h::init(void)
 //Reload LC Display
 void obd2racingmod_h::showMsgLCD(String line1,String line2)
 {  
+//  lcd.clear();
+//  lcd.setCursor(0, 1);
+//  lcd.print(line1);
+//  lcd.setCursor(0, 2);
+//  lcd.print(line2);
     Serial.println(line1);
     Serial.println(line2);
 }
